@@ -20,6 +20,7 @@ export class AppService implements OnModuleInit {
   onModuleInit() {
     this.apiUrl = this.configService.get('APIURL') as string;
     this.receiveUrl = `${this.configService.get('BASEURL')}/api/icorp/second-part`;
+    console.log(this.receiveUrl);
   }
 
   async start(msg: string) {
