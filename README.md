@@ -31,7 +31,8 @@ Jarayon ikki bosqichda ishlaydi:
 #### 🔗 Swagger manzili:
 
 ```
-http://51.20.133.17:3000/api/docs
+http://51.20.133.17:3000/api/docs -> ngnix uchun domen yo'qligi sababli pastdagi urlga tunel orqali ulangan
+https://velutinous-janna-shinily.ngrok-free.dev/api/docs#/
 ```
 
 #### 🔹 Bosqichlar:
