@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  icorp-api:
+    build: .
+    container_name: icorp_api
+    restart: always
+    env_file: .env
+    ports:
+      - '3000:3000'
+    command: yarn start:prod
