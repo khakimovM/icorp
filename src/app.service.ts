@@ -38,7 +38,7 @@ export class AppService implements OnModuleInit {
       console.log('Birinchi qism keldi: ', response.data);
       console.log('Ikkinchi qismni kutmoqdamiz...');
     } catch (error) {
-      console.log('Birinchi qismni olishda xatolik...', error);
+      console.log('Birinchi qismni olishda xatolik...', error.message);
       this.finalMessage = {
         originalmsg: '',
         part1: {},
