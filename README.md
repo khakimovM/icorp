@@ -52,8 +52,8 @@ Agar siz jarayonni **real vaqt loglari bilan** kuzatmoqchi bo‘lsangiz, loyihan
 #### 🔹 1-qadam: Loyihani klonlash
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/ICorp-Test.git
-cd ICorp-Test
+git clone https://github.com/khakimovM/icorp
+cd icorp
 ```
 
 #### 🔹 2-qadam: Kutubxonalarni o‘rnatish
@@ -145,7 +145,3 @@ YouTube: [Muxammadaziz Dev](https://www.youtube.com/watch?v=pOv7gVqVzKI)
 Email: khakimovmukhammadaziz@gmail.com
 
 ---
-
-## 🪪 Litsenziya
-
-Ushbu loyiha [MIT License](https://github.com/nestjs/nest/blob/master/LICENSE) asosida tarqatiladi.
