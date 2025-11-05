@@ -22,51 +22,13 @@ export class AppService implements OnModuleInit {
     this.receiveUrl = `${this.configService.get('BASEURL')}/api/icorp/second-part`;
   }
 
-  private async makeSecureRequest(url: string, options: any = {}) {
-    const defaultHeaders = {
-      'User-Agent':
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-      Accept: 'application/json, text/plain, */*',
-      'Accept-Language': 'en-US,en;q=0.9',
-      'Accept-Encoding': 'gzip, deflate, br',
-      Connection: 'keep-alive',
-      'Sec-Fetch-Dest': 'empty',
-      'Sec-Fetch-Mode': 'cors',
-      'Sec-Fetch-Site': 'same-origin',
-      'Cache-Control': 'no-cache',
-      Pragma: 'no-cache',
-    };
-    try {
-      const response = await axios({
-        url,
-        ...options,
-        headers: {
-          ...defaultHeaders,
-          ...options.headers,
-        },
-        timeout: 10000,
-      });
-      return response;
-    } catch (error) {
-      console.error(
-        'Secure request xatosi:',
-        error.response?.status,
-        error.response?.data,
-      );
-      throw error;
-    }
-  }
-
   async start(msg: string) {
     try {
       console.log('Jarayon boshlandi, original msg: ', msg);
 
-      const response = await this.makeSecureRequest(this.apiUrl, {
-        method: 'POST',
-        data: {
-          msg,
-          url: this.receiveUrl,
-        },
+      const response = await axios.post(this.apiUrl, {
+        msg,
+        url: this.receiveUrl,
       });
 
       this.firstPart = response.data.part1;
@@ -103,9 +65,7 @@ export class AppService implements OnModuleInit {
 
     try {
       console.log("Get so'rov yuborilmoqda...");
-      const response = await this.makeSecureRequest(
-        `${this.apiUrl}?code=${fullCode}`,
-      );
+      const response = await axios.get(`${this.apiUrl}?code=${fullCode}`);
       this.finalMessage.finalGet = response.data;
       console.log('Final natija: ', this.finalMessage);
     } catch (error) {
